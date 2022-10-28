@@ -1,9 +1,17 @@
+import { useContext } from "react";
 import Helmet from "react-helmet";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../context/authContext";
 
 import "./login.scss";
 
 const Login = () => {
+  const { login } = useContext(AuthContext);
+
+  const handleLogin = () => {
+    login();
+  };
+
   return (
     <>
       <Helmet>
@@ -38,7 +46,7 @@ const Login = () => {
 
               <input type="password" placeholder="Password" />
 
-              <button>Login</button>
+              <button onClick={handleLogin}>Login</button>
             </form>
           </div>
         </div>

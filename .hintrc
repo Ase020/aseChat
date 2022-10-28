@@ -10,6 +10,13 @@
           "meta[name=theme-color]"
         ]
       }
-    ]
-  }
+    ],
+    "compat-api/css": "off"
+  },
+  "browserslist": [
+    "defaults",
+    "not ie 11",
+    "not ios_saf <= 15.3",
+    "not safari <= 14.1"
+  ]
 }

@@ -1,0 +1,81 @@
+@import "../../style.scss";
+
+.post {
+  @include themify($themes) {
+    -webkit-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+    -moz-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+    box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+    border-radius: 20px;
+    background-color: themed("bg");
+    color: themed("textColor");
+
+    .container {
+      padding: 20px;
+
+      .user {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        //   padding: 10px 0;
+
+        .userInfo {
+          display: flex;
+          gap: 10px;
+          align-items: center;
+
+          img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+
+          .details {
+            display: flex;
+            flex-direction: column;
+
+            p {
+              font-weight: 500;
+            }
+
+            span {
+              font-size: 12px;
+              color: rgb(80, 80, 80);
+            }
+          }
+        }
+      }
+
+      .content {
+        margin: 10px 0;
+
+        p {
+          font-size: 15px;
+        }
+
+        img {
+          margin: 10px 0;
+          width: 100%;
+          max-height: 500px;
+          border-radius: 10px;
+          object-fit: cover;
+        }
+      }
+
+      .info {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+
+        .item {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          cursor: pointer;
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}
