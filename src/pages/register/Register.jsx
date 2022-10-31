@@ -1,9 +1,22 @@
+import { useState } from "react";
 import Helmet from "react-helmet";
 import { Link } from "react-router-dom";
 
 import "./register.scss";
 
 const Register = () => {
+  const [inputs, setInputs] = useState({
+    username: "",
+    email: "",
+    password: "",
+    name: "",
+  });
+
+  const handleChange = (e) => {
+    setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  console.log(inputs);
   return (
     <>
       <Helmet>
@@ -34,13 +47,33 @@ const Register = () => {
             <h1>Register</h1>
 
             <form>
-              <input type="text" placeholder="Username" />
+              <input
+                type="text"
+                placeholder="Username"
+                name="username"
+                onChange={handleChange}
+              />
 
-              <input type="email" placeholder="Email" />
+              <input
+                type="email"
+                placeholder="Email"
+                name="email"
+                onChange={handleChange}
+              />
 
-              <input type="password" placeholder="Passsword" />
+              <input
+                type="password"
+                placeholder="Passsword"
+                name="password"
+                onChange={handleChange}
+              />
 
-              <input type="password" placeholder="Confirm Passsword" />
+              <input
+                type="text"
+                placeholder="Name"
+                name="name"
+                onChange={handleChange}
+              />
 
               <button>Register</button>
             </form>
