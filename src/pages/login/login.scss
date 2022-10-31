@@ -1,9 +1,48 @@
+@mixin mobile {
+  @media screen and (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media screen and (max-width: 1200px) {
+    @content;
+  }
+}
+
 .login {
   height: 100vh;
   background: rgb(193, 190, 255);
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @include mobile {
+    background: linear-gradient(rgba(39, 11, 96, 0.5), rgba(39, 11, 96, 0.5)),
+      url("https://images.pexels.com/photos/3228727/pexels-photo-3228727.jpeg?auto=compress&cs=tinysrgb&w=1600")
+        center;
+    background-size: cover;
+  }
+
+  @include tablet {
+    background: linear-gradient(rgba(39, 11, 96, 0.5), rgba(39, 11, 96, 0.5)),
+      url("https://images.pexels.com/photos/3228727/pexels-photo-3228727.jpeg?auto=compress&cs=tinysrgb&w=1600")
+        center;
+    background-size: cover;
+  }
+
+  @include laptop {
+    background: linear-gradient(rgba(39, 11, 96, 0.5), rgba(39, 11, 96, 0.5)),
+      url("https://images.pexels.com/photos/3228727/pexels-photo-3228727.jpeg?auto=compress&cs=tinysrgb&w=1600")
+        center;
+    background-size: cover;
+  }
 
   .card {
     display: flex;
@@ -12,6 +51,14 @@
     background: #fff;
     min-height: 400px;
     overflow: hidden;
+
+    @include mobile {
+      width: 100%;
+    }
+
+    @include tablet {
+      width: 80%;
+    }
 
     .left {
       flex: 1;
@@ -42,6 +89,18 @@
         color: rgb(72, 63, 240);
         border-radius: 10px;
         font-weight: bold;
+      }
+
+      @include mobile {
+        display: none;
+      }
+
+      @include tablet {
+        display: none;
+      }
+
+      @include laptop() {
+        display: none;
       }
     }
 
